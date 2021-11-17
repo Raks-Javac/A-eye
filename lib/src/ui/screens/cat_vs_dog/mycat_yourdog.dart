@@ -6,16 +6,21 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key key}) : super(key: key);
+const modelLocation = "assets/cat_dog_set/model_unquant.tflite";
+const modelLabelocation = "assets/cat_dog_set/labels.txt";
+
+class CatVsDog extends StatefulWidget {
+  const CatVsDog({Key key}) : super(key: key);
 
   @override
-  _HomeScreenState createState() => _HomeScreenState();
+  _CatVsDogState createState() => _CatVsDogState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _CatVsDogState extends State<CatVsDog> {
+  bool loading = false;
   final picker = ImagePicker();
   var _image;
+  List<dynamic> result;
 
   //this function gets image from camera
   pickImageCamera() async {
@@ -26,6 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _image = File(image.path);
     });
+    classifyImage(_image);
   }
 
 //this function gets image from gallary
@@ -37,11 +43,13 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _image = File(image.path);
     });
+    classifyImage(_image);
   }
 
   //this function loads the tflite model
   loadModel() async {
-    await Tflite.loadModel(model: "", isAsset: true, labels: "");
+    return await Tflite.loadModel(
+        model: modelLocation, isAsset: true, labels: modelLabelocation);
   }
 
 //this function predicts the kind of image or object with the model
@@ -54,12 +62,17 @@ class _HomeScreenState extends State<HomeScreen> {
         threshold: 0.5,
         imageMean: 127.5,
         imageStd: 127.5);
+    setState(() {
+      result = output;
+      print(result);
+    });
   }
 
   @override
   void initState() {
+    loading = false;
     loadModel().then((e) {
-      debugPrint("MODEL STACKTRACE - $e");
+      debugPrint("MODEL STATUS - $e");
     });
     super.initState();
   }
@@ -104,7 +117,27 @@ class _HomeScreenState extends State<HomeScreen> {
                         height: 250,
                       ),
               ),
+              // if()
               UIHelper.verticalSpaceMediumPlus,
+
+              if (result != null)
+                Column(
+                  children: [
+                    Text(
+                      "This is a  ${result[0]['label']}",
+                      style: kTextStyle.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
+                    Text(
+                      "This is ${result[0]['confidence']} accurate",
+                      style: kTextStyle.copyWith(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ],
+                ),
+              UIHelper.verticalSpaceMedium,
               Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -112,13 +145,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     MaterialButton(
                       onPressed: pickImageCamera,
                       color: appColor,
-                      child: Text("Take a picture"),
+                      child: const Text("Take a picture"),
                     ),
                     UIHelper.verticalSpaceSmall,
                     MaterialButton(
                       onPressed: pickImageGallary,
                       color: appColor,
-                      child: Text("Camera Roll"),
+                      child: const Text("Camera Roll"),
                     ),
                   ],
                 ),
