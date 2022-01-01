@@ -1,8 +1,10 @@
+import 'package:a_eye/src/locator.dart';
+import 'package:a_eye/src/ui/main_platform.dart/main_mobile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_project_template/src/locator.dart';
-import 'package:flutter_project_template/src/ui/main_platform.dart/main_mobile.dart';
+
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

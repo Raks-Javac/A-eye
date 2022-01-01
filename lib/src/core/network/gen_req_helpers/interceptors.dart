@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_project_template/src/core/utils/functions.dart';
+import 'package:a_eye/src/core/utils/functions.dart';
 
 
 class Logging extends Interceptor {

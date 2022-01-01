@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_template/src/animations/animate_screen.dart';
+import 'package:a_eye/src/animations/animate_screen.dart';
 
 
 class NavigationService {
