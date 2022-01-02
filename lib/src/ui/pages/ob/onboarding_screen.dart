@@ -37,14 +37,37 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
 
   Widget indicator(bool isActive) {
     return AnimatedContainer(
-      margin: EdgeInsets.only(left: 6),
+      padding: const EdgeInsets.all(4.0),
       duration: Duration(milliseconds: 200),
-      height: 5,
-      width: isActive ? 10 : 5,
+      margin: EdgeInsets.only(left: 6),
+      height: screenAwareSize(30, context),
+      width: isActive
+          ? screenAwareSize(30, context)
+          : screenAwareSize(30, context),
       decoration: BoxDecoration(
-        color: isActive ? Colors.yellow[900] : Color(0xFFC4C4C4),
+        border: Border.all(
+            width: 2.0,
+            color: isActive
+                ? ColorsTexStyleStore.kTriviaYellow
+                : ColorsTexStyleStore.kTriviaYellow.withOpacity(0.3)),
+        color: Colors.transparent,
         borderRadius: BorderRadius.all(
           Radius.circular(30),
+        ),
+      ),
+      child: AnimatedContainer(
+        duration: Duration(milliseconds: 200),
+        height: screenAwareSize(20, context),
+        width: isActive
+            ? screenAwareSize(20, context)
+            : screenAwareSize(20, context),
+        decoration: BoxDecoration(
+          color: isActive
+              ? ColorsTexStyleStore.kTriviaYellow
+              : ColorsTexStyleStore.kTriviaYellow.withOpacity(0.3),
+          borderRadius: BorderRadius.all(
+            Radius.circular(30),
+          ),
         ),
       ),
     );
@@ -77,7 +100,9 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      indicatorWidget(),
+                      Container(
+                          margin: EdgeInsets.only(left: 15, bottom: 15),
+                          child: indicatorWidget()),
                       FlutterRipple(
                         child: Container(
                           margin: EdgeInsets.symmetric(
@@ -123,7 +148,6 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
                           ),
                         ),
                         radius: 40,
-                      
                         rippleColor: Theme.of(context).primaryColor,
                       ),
                     ],

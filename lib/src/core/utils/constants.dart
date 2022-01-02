@@ -51,7 +51,7 @@ class ImageStore {
 //stores colors and all other
 class ColorsTexStyleStore {
   static const Color kTriviaLightBlack = Color(0xFF222222);
-  static const Color kTriviaYellow = Colors.yellow;
+  static const Color kTriviaYellow = const Color(0xFFFFB61D);
   static const Color kTriviaLightYellow = Color(0xFFF7E8AB);
   static Color kTriviaScaffoldBackground = Colors.grey.shade200;
   static const Color kTriviaLightGrey = Color(0xFFF1F3F4);

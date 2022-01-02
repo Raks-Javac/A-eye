@@ -2,7 +2,10 @@ class OnBoarding {
   String imgDescription;
   String descriptionText;
   String title;
-  OnBoarding({required this.imgDescription, required this.descriptionText, required this.title});
+  OnBoarding(
+      {required this.imgDescription,
+      required this.descriptionText,
+      required this.title});
 }
 
 class OnBoardingListClass {
@@ -13,19 +16,21 @@ class OnBoardingListClass {
   List<OnBoarding> onBoardingList = [
     OnBoarding(
       imgDescription: "assets/images/onboarding1.png",
-      title: " Purchase your Airtime, Data and Utility with Hisa",
-      descriptionText: "Easy purchase of all these a click away.",
+      title: "Reality Check",
+      descriptionText:
+          "With the A-eye app you can identify objects in one click",
     ),
     OnBoarding(
       imgDescription: "assets/images/onboarding2.png",
-      title: 'Own a business',
-      descriptionText: "Become a reseller and a business owner today",
+      title: "Reality Check",
+      descriptionText:
+          "With the A-eye app you can identify objects in one click",
     ),
     OnBoarding(
       imgDescription: "assets/images/onboarding3.png",
-      title: "Topup your Device",
+      title: "Reality Check",
       descriptionText:
-          "Convenient and secure checkout with the widest range of payment options.",
+          "With the A-eye app you can identify objects in one click",
     ),
   ];
 }
