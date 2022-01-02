@@ -16,12 +16,14 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   image_picker: 
-  tflite: 
   get_it: ^7.2.0
   provider: ^6.0.1
   dio: ^4.0.4
   flutter_dotenv: ^5.0.2
   shared_preferences: ^2.0.8
+  flutter_ripple: ^0.0.3
+
+  # tflite: ^1.1.2
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +41,7 @@ flutter:
   assets:
     - assets/images/
     - assets/cat_dog_set/
+    - .env
 
 
 

@@ -2,11 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+const kTextStyle = TextStyle(
+  fontFamily: "PR",
+  fontSize: 18.5,
+  fontWeight: FontWeight.bold,
+);
+
 class ConstantsStore {}
 
 // stores strings
 class StringsStore {
-  static const String kAppName = "Fluutter Template";
+  static const String kAppName = "A-eye";
 
   String emptyEmailField({String? fieldType = "Email"}) =>
       '$fieldType field cannot be empty!';
@@ -37,7 +43,10 @@ class StringsStore {
 }
 
 //stores image constants
-class ImageStore {}
+class ImageStore {
+  //Stores all the image resource in app
+  static const String appLogo = "assets/images/a_eye_logo.png";
+}
 
 //stores colors and all other
 class ColorsTexStyleStore {

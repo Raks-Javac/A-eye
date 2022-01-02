@@ -4,7 +4,7 @@ import 'package:a_eye/src/core/utils/constants.dart';
 class ThemeHandler {
   static ThemeData get lightMode {
     return ThemeData(
-      primaryColor: ColorsTexStyleStore.kTriviaGreenColor,
+      primaryColor: ColorsTexStyleStore.kTriviaLightYellow,
       primaryColorLight: ColorsTexStyleStore.kTriviaLightYellow,
       colorScheme: ColorScheme.fromSwatch().copyWith(
           secondary: ColorsTexStyleStore.kTriviaLightYellow.withOpacity(0.3)),
@@ -14,6 +14,11 @@ class ThemeHandler {
 
 /// Contains useful consts to reduce boilerplate and duplicate code
 class UIHelper {
+  //font size
+  static const double kSmallFont = 11.0;
+  static const double kMediumFont = 14.0;
+  static const double kLargeFont = 24.0;
+
   // Vertical spacing constants. Adjust to your liking.
   static const double smallfontSize = 11.0;
   static const double mediumfontSize = 14.0;
