@@ -40,8 +40,8 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
       padding: const EdgeInsets.all(4.0),
       duration: Duration(milliseconds: 200),
       margin: EdgeInsets.only(left: 6),
-      height: 20,
-      width: 20,
+      height: isActive ? 25 : 20,
+      width: isActive ? 25 : 20,
       decoration: BoxDecoration(
         border: Border.all(
             width: 2.0,
@@ -55,8 +55,8 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
       ),
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
-        height: 10,
-        width: 10,
+        height: isActive ? 15 : 10,
+        width: isActive ? 15 : 10,
         decoration: BoxDecoration(
           color: isActive
               ? ColorsTexStyleStore.kTriviaYellow
