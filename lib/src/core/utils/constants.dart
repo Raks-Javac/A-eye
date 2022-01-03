@@ -62,4 +62,19 @@ class ColorsTexStyleStore {
   static const Color kTriviaBlack = Colors.black;
   static const Color kTriviaRed = Color(0xFFB80016);
   static const Color kTriviaTransparentColor = Colors.transparent;
+    
+  static const kRedTextFieldStyling = OutlineInputBorder(
+      borderRadius: kTextFieldBorder,
+      borderSide: BorderSide(color: kTriviaRed));
+
+  static OutlineInputBorder kYellowTextFieldStyling = const OutlineInputBorder(
+      borderRadius: kTextFieldBorder,
+      borderSide: BorderSide(color: kTriviaYellow));
+  static OutlineInputBorder kTextFieldBlackStyling = OutlineInputBorder(
+      gapPadding: 1.0,
+      borderRadius: kTextFieldBorder,
+      borderSide: BorderSide(width: 0.8, color: Colors.black.withOpacity(0.4)));
+  static const kTextFieldBorder = BorderRadius.all(
+    Radius.circular(10),
+  );
 }

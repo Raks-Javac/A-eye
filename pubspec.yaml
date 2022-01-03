@@ -22,6 +22,7 @@ dependencies:
   flutter_dotenv: ^5.0.2
   shared_preferences: ^2.0.8
   flutter_ripple: ^0.0.3
+  flutter_staggered_animations: ^1.0.0
 
   # tflite: ^1.1.2
 

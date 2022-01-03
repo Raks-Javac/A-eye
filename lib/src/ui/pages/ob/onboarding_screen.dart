@@ -40,10 +40,8 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
       padding: const EdgeInsets.all(4.0),
       duration: Duration(milliseconds: 200),
       margin: EdgeInsets.only(left: 6),
-      height: screenAwareSize(30, context),
-      width: isActive
-          ? screenAwareSize(30, context)
-          : screenAwareSize(30, context),
+      height: 20,
+      width: 20,
       decoration: BoxDecoration(
         border: Border.all(
             width: 2.0,
@@ -57,10 +55,8 @@ class _OnboadingScreenState extends State<OnboadingScreen> {
       ),
       child: AnimatedContainer(
         duration: Duration(milliseconds: 200),
-        height: screenAwareSize(20, context),
-        width: isActive
-            ? screenAwareSize(20, context)
-            : screenAwareSize(20, context),
+        height: 10,
+        width: 10,
         decoration: BoxDecoration(
           color: isActive
               ? ColorsTexStyleStore.kTriviaYellow
