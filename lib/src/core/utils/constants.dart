@@ -2,11 +2,17 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+const kTextStyle = TextStyle(
+  fontFamily: "PR",
+  fontSize: 18.5,
+  fontWeight: FontWeight.bold,
+);
+
 class ConstantsStore {}
 
 // stores strings
 class StringsStore {
-  static const String kAppName = "Fluutter Template";
+  static const String kAppName = "A-eye";
 
   String emptyEmailField({String? fieldType = "Email"}) =>
       '$fieldType field cannot be empty!';
@@ -37,12 +43,15 @@ class StringsStore {
 }
 
 //stores image constants
-class ImageStore {}
+class ImageStore {
+  //Stores all the image resource in app
+  static const String appLogo = "assets/images/a_eye_logo.png";
+}
 
 //stores colors and all other
 class ColorsTexStyleStore {
   static const Color kTriviaLightBlack = Color(0xFF222222);
-  static const Color kTriviaYellow = Colors.yellow;
+  static const Color kTriviaYellow = const Color(0xFFFFB61D);
   static const Color kTriviaLightYellow = Color(0xFFF7E8AB);
   static Color kTriviaScaffoldBackground = Colors.grey.shade200;
   static const Color kTriviaLightGrey = Color(0xFFF1F3F4);
@@ -53,4 +62,19 @@ class ColorsTexStyleStore {
   static const Color kTriviaBlack = Colors.black;
   static const Color kTriviaRed = Color(0xFFB80016);
   static const Color kTriviaTransparentColor = Colors.transparent;
+    
+  static const kRedTextFieldStyling = OutlineInputBorder(
+      borderRadius: kTextFieldBorder,
+      borderSide: BorderSide(color: kTriviaRed));
+
+  static OutlineInputBorder kYellowTextFieldStyling = const OutlineInputBorder(
+      borderRadius: kTextFieldBorder,
+      borderSide: BorderSide(color: kTriviaYellow));
+  static OutlineInputBorder kTextFieldBlackStyling = OutlineInputBorder(
+      gapPadding: 1.0,
+      borderRadius: kTextFieldBorder,
+      borderSide: BorderSide(width: 0.8, color: Colors.black.withOpacity(0.4)));
+  static const kTextFieldBorder = BorderRadius.all(
+    Radius.circular(10),
+  );
 }

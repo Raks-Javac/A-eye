@@ -3,7 +3,7 @@ import 'package:a_eye/src/core/services/navigation_services.dart';
 import 'package:a_eye/src/core/utils/constants.dart';
 import 'package:a_eye/src/core/utils/styles.dart';
 import 'package:a_eye/src/locator.dart';
-import 'package:a_eye/src/ui/main_screen.dart';
+import 'package:a_eye/src/ui/splash_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -22,17 +22,13 @@ class _ProviderAppState extends State<ProviderApp> {
       providers: allProviders,
       child: MaterialApp(
         color: ColorsTexStyleStore.kTriviaGreenColor,
-        // builder: (context, widget) => Navigator(
-        //   onGenerateRoute: (settings) => MaterialPageRoute(
-        //       builder: (context) => DialogManager(child: widget)),
-        // ),
-        scaffoldMessengerKey: getIt<NavigationService>().scaffoldKey,
+      
         navigatorKey: getIt<NavigationService>().navigationKey,
         debugShowCheckedModeBanner: false,
         title: StringsStore.kAppName,
         theme: ThemeHandler.lightMode,
         // home:  const TestApi(),
-        home: const MainScreen(),
+        home: const SplashScreen(),
       ),
     );
   }

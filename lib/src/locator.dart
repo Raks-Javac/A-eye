@@ -1,3 +1,4 @@
+import 'package:a_eye/src/core/services/navigation_services.dart';
 import 'package:a_eye/src/core/view_model/base_model.dart';
 import 'package:get_it/get_it.dart';
 import 'package:provider/provider.dart';
@@ -14,7 +15,7 @@ Future setupLocator() async {
   // locator.registerSingleton<LocalStorageService>(instance);
   //naviagtion services class registered
 
-  // getIt.registerLazySingleton(() => NavigationService());
+  getIt.registerLazySingleton(() => NavigationService());
 
   getIt.registerFactory(() => BaseModel());
 }
